@@ -40,7 +40,7 @@ public class CandyVendingMachine implements Interfaces
         for (Product prod : product ) {
             if (productNumber == prod.getId())
             {
-                return product[productNumber-1].makeInformation();
+                return prod.makeInformation();
             }
         }
         return null;
@@ -62,7 +62,7 @@ public class CandyVendingMachine implements Interfaces
     public Product request(int productNumber)
     {
         for (Product prod : product ) {
-            if (depositpool >= prod.getId() && prod.getId() == productNumber)
+            if (depositpool >= prod.getPrice() && prod.getId() == productNumber)
             {
                 return prod;
             }
