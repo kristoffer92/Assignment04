@@ -5,6 +5,8 @@ import Assignment04.Products.Drink;
 import Assignment04.Products.Food;
 import Assignment04.Products.Fruit;
 import Assignment04.Products.Sweet;
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 import java.util.Arrays;
 
 
@@ -34,7 +36,7 @@ public class CandyVendingMachine implements Interfaces
 
     @Override//Makes the index start from One instead of Zero
     public String getDescription(int productNumber) {
-        return product[productNumber-1].makeInformation();
+        return product[0].makeInformation();
     }
 
     @Override
@@ -53,12 +55,12 @@ public class CandyVendingMachine implements Interfaces
     public Product request(int productNumber)
     {
         for (Product prod : product ) {
-            if (prod.getId() == productNumber)
+            if (depositpool > 0 && prod.getId() == productNumber)
             {
                 return prod;
             }
         }
-         return null;
+        return null;
     }
 
     @Override

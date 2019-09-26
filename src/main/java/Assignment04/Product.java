@@ -71,6 +71,7 @@ public abstract class Product {
 
         return InfoProduct.toString();
     }
+
     @Override
     public String toString()
     {
